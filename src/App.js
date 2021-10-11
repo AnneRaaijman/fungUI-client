@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
 import MessageBox from "./components/MessageBox";
-// import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 // import Home from "./pages/Home";
 // import Details from "./pages/ArtworkDetails";
@@ -32,7 +32,7 @@ function App() {
         {/* <Route exact path="/" component={Home} /> */}
         {/* <Route path="/artwork/:id" component={Details} /> */}
         {/* <Route path="/auction" component={Auction} /> */}
-        {/* <Route path="/signup" component={SignUp} /> */}
+        <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>
     </div>

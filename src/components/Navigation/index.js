@@ -18,7 +18,7 @@ export default function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
-        <strong>WELCOME</strong> to Anne's art house
+        <strong>WELCOME</strong> to the FungUI
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
