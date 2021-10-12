@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
@@ -7,7 +7,7 @@ import Loading from "./components/Loading";
 import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 // import Details from "./pages/ArtworkDetails";
 // import Auction from "./pages/Auction";
 
@@ -29,7 +29,7 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Switch>
-        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path="/" component={Home} />
         {/* <Route path="/artwork/:id" component={Details} /> */}
         {/* <Route path="/auction" component={Auction} /> */}
         <Route path="/signup" component={SignUp} />
