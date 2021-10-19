@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap");
+
+formContainer {
+  background-color: chartreuse;
+  font-family: "Antonio", sans-serif;
+}
+
+.border-on-form {
+  border: 2px solid black;
+}

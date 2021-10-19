@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, getState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row, Form, Button, Container, Label } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Map from "../Map/Map";
 import { fetchedMushrooms } from "../../store/mushroom/selectors";
 import { postObservation } from "../../store/observations/actions";
+import { useHistory } from "react-router-dom";
+import "./ObservationForm.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function ObservationForm() {
+  // const state = getState();
+  // console.log("state", state);
   const dispatch = useDispatch();
   //select mushrooms from database for dropdown selection
   const mushrooms = useSelector(fetchedMushrooms);
@@ -26,20 +30,8 @@ export default function ObservationForm() {
 
   function submitForm(event) {
     event.preventDefault();
-    dispatch(
-      postObservation(
-        title,
-        observationTime,
-        url,
-        latitude,
-        longitude,
-        mushroomId
-      )
-    );
-  }
+    // uploadImage();
 
-  //cloudinary code for uploading pictures and converting to URL
-  const uploadImage = () => {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "img_fungui");
@@ -51,9 +43,36 @@ export default function ObservationForm() {
       .then((resp) => resp.json())
       .then((data) => {
         setUrl(data.url);
+        dispatch(
+          postObservation({
+            title,
+            observationTime,
+            url: data.url,
+            latitude,
+            longitude,
+            mushroomId,
+          })
+        );
       })
       .catch((err) => console.log(err));
-  };
+  }
+
+  //cloudinary code for uploading pictures and converting to URL
+  // const uploadImage = () => {
+  //   const data = new FormData();
+  //   data.append("file", image);
+  //   data.append("upload_preset", "img_fungui");
+  //   data.append("cloud_name", "fungui");
+  //   fetch("https://api.cloudinary.com/v1_1/fungui/image/upload", {
+  //     method: "post",
+  //     body: data,
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((data) => {
+  //       setUrl(data.url);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   // console.log("title?", title);
   // console.log("mushroomId", mushroomId);
@@ -64,9 +83,11 @@ export default function ObservationForm() {
   // console.log("coords?", coords);
 
   return (
-    <Container>
+    <Container
+      style={{ backgroundColor: "#589a4a", border: "3px solid black" }}
+    >
       <Form md={{ span: 6, offset: 3 }} className="mt-5, mb-5">
-        <h1 className="mt-5 mb-5">Add a new Observation!</h1>
+        <h1 className="formContainer">Add a new Observation!</h1>
         <Row>
           <Col>
             <Form.Group controlId="formBasicTitle">
@@ -112,10 +133,9 @@ export default function ObservationForm() {
                 type="file"
                 onChange={(e) => setImage(e.target.files[0])}
               />
-              <Button onClick={uploadImage}>Upload</Button>
               <div>
                 <p>Uploaded image will be displayed here</p>
-                <img src={url} alt="preview" />
+                <img src={url} alt="preview" style={{ maxHeight: "50px" }} />
               </div>
             </Form.Group>
             <Form.Group className="mt-5">
