@@ -13,7 +13,7 @@ export default function MushroomMarkerCard(props) {
         alt={props.title}
         style={{ display: "block,", maxWidth: " 50%" }}
       />
-      <Link to={`/mushroom/${props.id}`}>
+      <Link to={`/mushroom/${props.mushroomId}`}>
         <Button>Look at Mushroom information</Button>
       </Link>
     </div>

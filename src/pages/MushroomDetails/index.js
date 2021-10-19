@@ -11,13 +11,20 @@ export default function MushroomDetails() {
   useEffect(() => {
     dispatch(fetchedMushroomDetails(id));
   }, []);
+  console.log("mushroom", mushroom);
   return (
     <div>
-      <MushroomDetailsCard
-        key={mushroom.id}
-        commonNameEnglish={mushroom.commonNameEnglish}
-        image={mushroom.image}
-      />{" "}
+      {mushroom ? (
+        <MushroomDetailsCard
+          key={mushroom.id}
+          scientificName={mushroom.scientificName}
+          commonNameEnglish={mushroom.commonNameEnglish}
+          image={mushroom.image}
+          isPoisonous={mushroom.isPoisonous}
+        />
+      ) : (
+        "Loading.."
+      )}{" "}
     </div>
   );
 }
