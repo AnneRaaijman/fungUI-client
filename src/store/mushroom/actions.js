@@ -11,17 +11,17 @@ export const fetchMushrooms = () => {
   };
 };
 
-// export const fetchedArtworkDetails = (id) => {
-//   return async (dispatch, getState) => {
-//     try {
-//       const res = await axios.get(`http://localhost:4000/artwork/${id}`);
-//       console.log(res);
-//       dispatch({ type: "artworks/detailsfetched", payload: res.data });
-//     } catch (e) {
-//       console.log(e.message);
-//     }
-//   };
-// };
+export const fetchedMushroomDetails = (id) => {
+  return async (dispatch, getState) => {
+    try {
+      const res = await axios.get(`http://localhost:4000/mushroom/${id}`);
+      console.log(res);
+      dispatch({ type: "mushrooms/detailsfetched", payload: res.data });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+};
 
 // export const heartsUpdated = (data) => {
 //   return {

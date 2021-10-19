@@ -17,16 +17,12 @@ export default function Navigation() {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand as={NavLink} to="/">
-        <strong>WELCOME</strong> to the FungUI
-      </Navbar.Brand>
+      <Navbar.Brand as={NavLink} to="/"></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
-          <NavbarItem path="/" linkText="Home" />
-          {userIsArtist ? (
-            <NavbarItem path="/auction" linkText="Start an auction" />
-          ) : null}
+          <NavbarItem class="text-succes" path="/" linkText="Home" />
+          <NavbarItem path="/map" linkText="Mushroom Map" />
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>

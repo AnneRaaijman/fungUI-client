@@ -8,7 +8,8 @@ import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-// import Details from "./pages/ArtworkDetails";
+import ObservationMap from "./pages/ObservationMap";
+import Details from "./pages/MushroomDetails";
 // import Auction from "./pages/Auction";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -30,8 +31,8 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Route path="/artwork/:id" component={Details} /> */}
-        {/* <Route path="/auction" component={Auction} /> */}
+        <Route path="/mushroom/:id" component={Details} />
+        <Route path="/map" component={ObservationMap} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>
