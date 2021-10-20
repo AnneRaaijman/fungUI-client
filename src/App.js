@@ -8,6 +8,7 @@ import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import AreaMap from "./pages/AreaMap";
 import ObservationMap from "./pages/ObservationMap";
 import Details from "./pages/MushroomDetails";
 // import Auction from "./pages/Auction";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/mushroom/:id" component={Details} />
         <Route path="/map" component={ObservationMap} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/areamap" component={AreaMap} />
         <Route path="/login" component={Login} />
       </Switch>
     </div>

@@ -64,7 +64,7 @@ export default function Map(props) {
         id="mapid"
         center={initialPosition}
         zoom={13}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
       >
         <ChangeView center={props.selectedPosition} zoom={13} />
         <Markers />
@@ -76,7 +76,7 @@ export default function Map(props) {
             '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }
           accessToken={
-            "ubARfEgYw6uacBazXZHj4JCpeSmFpmcjDCb7fY7XJNZ4KcpVYuA3EHvqklsmLAgm>"
+            "ubARfEgYw6uacBazXZHj4JCpeSmFpmcjDCb7fY7XJNZ4KcpVYuA3EHvqklsmLAgm"
           }
         />
       </MapContainer>

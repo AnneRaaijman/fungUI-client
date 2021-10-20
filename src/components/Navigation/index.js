@@ -8,21 +8,26 @@ import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 import { selectUser } from "../../store/user/selectors";
+import "./index.css";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
 
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
-  const userIsArtist = useSelector(selectUser).isArtist;
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navBar" expand="lg">
       <Navbar.Brand as={NavLink} to="/"></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
           <NavbarItem class="text-succes" path="/" linkText="Home" />
-          <NavbarItem path="/map" linkText="Mushroom Map" />
+          <NavbarItem
+            style={{ color: "white" }}
+            path="/map"
+            linkText="Mushroom Map"
+          />
+          <NavbarItem path="/areamap" linkText="Park Map" />
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>

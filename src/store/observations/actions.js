@@ -1,4 +1,5 @@
 import axios from "axios";
+import { showMessageWithTimeout } from "../appState/actions";
 
 export const fetchObservations = () => {
   return async (dispatch, getState) => {
@@ -11,14 +12,14 @@ export const fetchObservations = () => {
   };
 };
 
-export const postObservation = (
+export const postObservation = ({
   title,
   observationTime,
   url,
   latitude,
   longitude,
-  mushroomId
-) => {
+  mushroomId,
+}) => {
   return async (dispatch, getState) => {
     try {
       const reduxState = getState();
@@ -42,7 +43,9 @@ export const postObservation = (
         //     },
         //   }
       );
-      // dispatch(showMessageWithTimeout("success", true, "Auction Created"));
+      dispatch(
+        showMessageWithTimeout("success", true, "Observation added to map")
+      );
     } catch (e) {
       console.log(e.message);
     }
