@@ -135,7 +135,7 @@ export default function ObservationForm() {
               />
               <div>
                 <p>Uploaded image will be displayed here</p>
-                <img src={url} alt="preview" style={{ maxHeight: "50px" }} />
+                <img src={url} alt="preview" style={{ maxHeight: "400px" }} />
               </div>
             </Form.Group>
             <Form.Group className="mt-5">
