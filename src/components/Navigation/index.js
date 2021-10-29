@@ -7,7 +7,6 @@ import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
-import { selectUser } from "../../store/user/selectors";
 import "./index.css";
 
 export default function Navigation() {

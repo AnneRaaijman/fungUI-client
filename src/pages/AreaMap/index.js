@@ -1,17 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import L, { Icon } from "leaflet";
 import { fetchParks } from "../../store/park/actions";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  useMapEvents,
-  useMap,
-  Popup,
-  Circle,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Popup, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./index.css";
 import { fetchedParks } from "../../store/park/selectors";
@@ -24,7 +15,7 @@ export default function AreaMap() {
   const redOptions = { color: "green" };
   useEffect(() => {
     dispatch(fetchParks());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container>

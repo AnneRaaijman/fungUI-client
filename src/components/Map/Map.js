@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import L, { Icon } from "leaflet";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import {
   MapContainer,
@@ -8,7 +7,6 @@ import {
   Marker,
   useMapEvents,
   useMap,
-  Popup,
 } from "react-leaflet";
 import "./Map.css";
 // import { markerPosition } from "../../store/map/actions";
@@ -33,7 +31,6 @@ export default function Map(props) {
       const { latitude, longitude } = position.coords;
       setInitialPosition([latitude, longitude]);
       console.log("initialPosition", initialPosition);
-      // console.log("selected position", selectedPosition);
     });
   }, []);
 

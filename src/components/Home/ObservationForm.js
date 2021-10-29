@@ -1,11 +1,10 @@
-import React, { useState, getState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Col, Row, Form, Button, Container, Label } from "react-bootstrap";
+import { Col, Row, Form, Button, Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Map from "../Map/Map";
 import { fetchedMushrooms } from "../../store/mushroom/selectors";
 import { postObservation } from "../../store/observations/actions";
-import { useHistory } from "react-router-dom";
 import "./ObservationForm.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "leaflet/dist/leaflet.css";

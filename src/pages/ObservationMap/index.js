@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import L, { Icon } from "leaflet";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MushroomMarkerCard from "../../components/MushroomMarkerCard";
@@ -31,7 +31,7 @@ export default function ObservationMap() {
 
   useEffect(() => {
     dispatch(fetchObservations());
-  }, []);
+  }, [dispatch]);
 
   // const poisonousMushrooms = observations.filter((observation) => {
   //   return observation.mushroom.isPoisonous === true;

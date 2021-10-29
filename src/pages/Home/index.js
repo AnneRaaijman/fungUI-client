@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchMushrooms());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="mainBackground">
