@@ -41,6 +41,23 @@ export default function ObservationMap() {
 
   return (
     <Container>
+      <figure>
+        <img
+          src="https://pics.clipartpng.com/Red_Mushroom_PNG_Clipart-1193.png"
+          alt="non-poisonous"
+          style={{ height: "30px", paddingRight: "0px" }}
+        />
+        <figcaption>non-poisonous </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://i.ibb.co/F3P2XJC/transparent-violet-mushroom-purple-pink-magenta-5da0dc22959de6-7385818915708232026128.png"
+          alt="poisonous"
+          style={{ height: "30px", paddingRight: "0px" }}
+        />
+        <figcaption>non-poisonous </figcaption>
+      </figure>
+
       <MapContainer
         id="mapid2"
         center={coords}
