@@ -32,7 +32,7 @@ export default function Map(props) {
       setInitialPosition([latitude, longitude]);
       console.log("initialPosition", initialPosition);
     });
-  }, []);
+  }, [initialPosition]);
 
   const Markers = () => {
     useMapEvents({

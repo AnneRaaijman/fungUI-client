@@ -46,6 +46,7 @@ export const postObservation = ({
       dispatch(
         showMessageWithTimeout("success", true, "Observation added to map")
       );
+      console.log(res);
     } catch (e) {
       console.log(e.message);
     }
