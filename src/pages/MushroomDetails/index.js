@@ -10,7 +10,7 @@ export default function MushroomDetails() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchedMushroomDetails(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
   console.log("mushroom", mushroom);
   return (
     <div>
