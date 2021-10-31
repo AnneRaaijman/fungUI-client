@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+📖 Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Table of Contents
+➤ About The Project
+➤ Overview
+➤ Project Files Description
+➤ Getting Started
+➤ Scenario 1: Depth First Search
+➤ Scenario 2: Breadth First Search
+➤ Scenario 3: Uniform Cost Search
+➤ Scenario 4: A* search algorithm
+➤ Scenario 5: Finding All Corners
+➤ Scenario 6: Admissible and Consistent Heuristic
+➤ Scenario 7: Eating All Dots
+➤ Scenario 8: Suboptimal Search
+➤ References
+➤ Credits
 
 ## Available Scripts
 
