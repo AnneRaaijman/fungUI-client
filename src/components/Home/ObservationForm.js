@@ -4,6 +4,7 @@ import { Col, Row, Form, Button, Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Map from "../Map/Map";
 import { fetchedMushrooms } from "../../store/mushroom/selectors";
+import { fetchedParks } from "../../store/park/selectors";
 import { postObservation } from "../../store/observations/actions";
 import "./ObservationForm.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -14,11 +15,14 @@ export default function ObservationForm() {
   // const state = getState();
   // console.log("state", state);
   const dispatch = useDispatch();
+  //select parks from database for dropdown selection
+  const parks = useSelector(fetchedParks);
+  console.log("parks", parks);
   //select mushrooms from database for dropdown selection
   const mushrooms = useSelector(fetchedMushrooms);
 
   // set states from form for making mushroom observation
-  const [title, setTitle] = useState("");
+  const [parkId, setParkId] = useState("");
   const [mushroomId, setMushroomId] = useState(0);
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
@@ -44,7 +48,7 @@ export default function ObservationForm() {
         setUrl(data.url);
         dispatch(
           postObservation({
-            title,
+            parkId,
             observationTime,
             url: data.url,
             latitude,
@@ -56,30 +60,8 @@ export default function ObservationForm() {
       .catch((err) => console.log(err));
   }
 
-  //cloudinary code for uploading pictures and converting to URL
-  // const uploadImage = () => {
-  //   const data = new FormData();
-  //   data.append("file", image);
-  //   data.append("upload_preset", "img_fungui");
-  //   data.append("cloud_name", "fungui");
-  //   fetch("https://api.cloudinary.com/v1_1/fungui/image/upload", {
-  //     method: "post",
-  //     body: data,
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then((data) => {
-  //       setUrl(data.url);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // console.log("title?", title);
-  // console.log("mushroomId", mushroomId);
-  // console.log("image url?", url);
-  // console.log("date", observationTime);
   console.log("lat?", latitude);
   console.log("long?", longitude);
-  // console.log("coords?", coords);
 
   return (
     <Container
@@ -91,13 +73,21 @@ export default function ObservationForm() {
           <Col>
             <Form.Group controlId="formBasicTitle">
               <Form.Label>What park did you find this mushroom?</Form.Label>
-              <Form.Control
-                value={title}
-                onChange={(event) => setTitle(event.target.value)}
-                type="text"
-                placeholder="Enter Title"
-                required
-              />
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                onChange={(event) => setParkId(event.target.value)}
+                value={parkId}
+              >
+                <option value={0}>--- Which park did you go? ----</option>
+                {parks.map((park) => {
+                  return (
+                    <option key={park.id} value={park.id}>
+                      {park.parkName}
+                    </option>
+                  );
+                })}
+              </select>
             </Form.Group>
             <Form.Group className="mt-10 mb-5" controlId="formBasicMushroom">
               <Form.Label>Select the mushroom you saw </Form.Label>

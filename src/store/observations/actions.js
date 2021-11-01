@@ -13,7 +13,7 @@ export const fetchObservations = () => {
 };
 
 export const postObservation = ({
-  title,
+  parkId,
   observationTime,
   url,
   latitude,
@@ -29,7 +29,7 @@ export const postObservation = ({
       const res = await axios.post(
         "http://localhost:4000/observations",
         {
-          title,
+          parkId,
           observationTime,
           url,
           latitude,

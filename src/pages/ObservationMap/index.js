@@ -89,7 +89,7 @@ export default function ObservationMap() {
                   key={observation.id}
                   id={observation.id}
                   commonNameEnglish={observation.mushroom.commonNameEnglish}
-                  title={observation.title}
+                  title={observation.park.parkName}
                   image={observation.image}
                   mushroomId={observation.mushroomId}
                 />

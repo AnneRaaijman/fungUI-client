@@ -43,7 +43,7 @@ export default function AreaMap() {
               pathOptions={redOptions}
               radius={400}
             >
-              <Popup>Popup in CircleMarker</Popup>
+              <Popup>{park.parkName}</Popup>
             </Circle>
           );
         })}
