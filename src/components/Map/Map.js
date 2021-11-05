@@ -58,6 +58,15 @@ export default function Map(props) {
   return (
     <div>
       <MapContainer
+        style={{
+          border: "2px solid",
+          borderRadius: "10px",
+          height: "50vw",
+          width: "60vw",
+          maxWidth: "1000px",
+          maxHeight: "800px",
+          margin: "0px 18%",
+        }}
         id="mapid"
         center={initialPosition}
         zoom={13}

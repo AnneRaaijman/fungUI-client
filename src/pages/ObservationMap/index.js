@@ -55,7 +55,7 @@ export default function ObservationMap() {
           alt="poisonous"
           style={{ height: "30px", paddingRight: "0px" }}
         />
-        <figcaption>non-poisonous </figcaption>
+        <figcaption> poisonous </figcaption>
       </figure>
 
       <MapContainer

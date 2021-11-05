@@ -11,7 +11,7 @@ import { fetchedMushrooms } from "../../store/mushroom/selectors";
 export default function Home() {
   const dispatch = useDispatch();
   const mushrooms = useSelector(fetchedMushrooms);
-  // console.log("mushrooms", mushrooms);
+  console.log("mushrooms", mushrooms);
 
   useEffect(() => {
     dispatch(fetchParks());
